@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
+import {CommonModule} from "@angular/common";
+import {LeftSidebarComponent} from "./left-sidebar/left-sidebar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, LeftSidebarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'formulastats-frontend';
+
+  ngOnDestroy(): void {
+  }
+
+  ngOnInit(): void {
+  }
 }
